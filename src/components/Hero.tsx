@@ -24,12 +24,15 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 flex flex-col justify-center bg-[#0B0B0B] overflow-hidden">
+      {/* Luxury Vignette Overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.85)_100%)] pointer-events-none z-10" />
+
       {/* Background radial glow */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-gold/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-accent-red/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full z-20 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column (Main Info) */}
           <motion.div
@@ -115,31 +118,31 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 flex justify-center relative min-h-[520px] md:min-h-[650px] lg:mt-[-70px] mt-[-30px] z-20"
+            className="lg:col-span-5 flex justify-center relative min-h-[550px] md:min-h-[680px] lg:mt-[-90px] mt-[-30px] z-20"
           >
-            {/* Concentric Circles & Gold Glow Behind Torso */}
-            <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none scale-[0.7] md:scale-[0.85] top-[55%] -translate-y-1/2">
+            {/* Concentric Circles & Gold Glow Behind Chest/Head */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none scale-[0.7] md:scale-[0.8] top-[38%] -translate-y-1/2">
               {/* Soft warm gold glow */}
               <div className="absolute w-[350px] h-[350px] bg-[#C9A96A]/12 rounded-full blur-[100px]" />
               
               {/* Subtle red circles */}
-              <div className="absolute w-[200px] h-[200px] rounded-full border border-accent-red/10" />
-              <div className="absolute w-[320px] h-[320px] rounded-full border border-accent-red/6" />
-              <div className="absolute w-[440px] h-[440px] rounded-full border border-accent-red/3" />
-              <div className="absolute w-[560px] h-[560px] rounded-full border border-accent-red/2" />
+              <div className="absolute w-[130px] h-[130px] rounded-full border border-accent-red/10" />
+              <div className="absolute w-[220px] h-[220px] rounded-full border border-accent-red/6" />
+              <div className="absolute w-[310px] h-[310px] rounded-full border border-accent-red/3" />
+              <div className="absolute w-[400px] h-[400px] rounded-full border border-accent-red/2" />
             </div>
 
-            {/* Grounding Shadow */}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[220px] md:w-[280px] h-[16px] bg-black/80 blur-[14px] rounded-full -z-10" />
+            {/* Grounding Floor Shadow */}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[280px] md:w-[350px] h-[20px] bg-black/90 blur-[18px] rounded-full -z-10" />
 
             {/* Model Image wrapper */}
-            <div className="relative w-[380px] md:w-[480px] h-[520px] md:h-[650px]">
+            <div className="relative w-[380px] md:w-[480px] h-[550px] md:h-[680px]">
               <Image
                 src="/images/hero_model.png"
                 alt="Live It Up Premium Consulting"
                 fill
                 priority
-                className="object-contain object-bottom scale-125 md:scale-145 origin-bottom"
+                className="object-contain object-bottom scale-155 md:scale-185 origin-bottom"
               />
             </div>
           </motion.div>
@@ -149,7 +152,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-3 z-10"
+            className="lg:col-span-3 z-10 lg:-translate-x-12 translate-x-0 transition-transform duration-300"
           >
             <div className="bg-white/[0.03] backdrop-blur-sm border-2 border-accent-gold/30 p-8 rounded-3xl relative overflow-hidden shadow-xl shadow-accent-gold/5">
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent-gold/10 blur-2xl rounded-full" />
