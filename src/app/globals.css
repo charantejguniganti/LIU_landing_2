@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0B0B0B;
+  --foreground: #FFFFFF;
+  --primary-bg: #0B0B0B;
+  --secondary-bg: #F7F2EB;
+  --card-bg: #FFFFFF;
+  --text-primary: #111111;
+  --text-dark: #FFFFFF;
+  --accent-gold: #C9A96A;
+  --accent-red: #A52A2A;
+  --muted-beige: #E9DED0;
+  --border-rgba: rgba(255, 255, 255, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  --color-primary-bg: var(--primary-bg);
+  --color-secondary-bg: var(--secondary-bg);
+  --color-card-bg: var(--card-bg);
+  --color-text-primary: var(--text-primary);
+  --color-text-dark: var(--text-dark);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-red: var(--accent-red);
+  --color-muted-beige: var(--muted-beige);
+  --color-border-rgba: var(--border-rgba);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), Arial, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
 }
+
+/* Custom transitions and scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A96A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A52A2A;
+}
+
+/* Base style resets and utilities */
+.luxury-text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #C9A96A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border: 1px solid rgba(201, 169, 106, 0.2);
+}
+
+.gold-border-hover:hover {
+  border-color: rgba(201, 169, 106, 0.6);
+  box-shadow: 0 0 15px rgba(201, 169, 106, 0.1);
+}
+
