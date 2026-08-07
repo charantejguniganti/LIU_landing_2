@@ -49,10 +49,10 @@ export default function Hero() {
             </div>
 
             {/* Title */}
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
-              {"Transform\u00A0Your\u00A0Image."}<br />
-              {"Build\u00A0Confidence."}<br />
-              <span className="text-accent-red">{"Stand\u00A0Out."}</span>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6 flex flex-col gap-1">
+              <span className="block md:whitespace-nowrap">Transform Your Image.</span>
+              <span className="block md:whitespace-nowrap">Build Confidence.</span>
+              <span className="text-accent-red block md:whitespace-nowrap">Stand Out.</span>
             </h1>
 
             {/* Description */}
