@@ -22,29 +22,29 @@ export default function FeaturedVideo() {
             className="lg:col-span-5 flex flex-col justify-center"
           >
             <span className="text-accent-red text-xs font-bold tracking-[0.2em] uppercase mb-4">
-              {"SEE WHAT YOU'LL LEARN"}
+              {"SEE THE TRANSFORMATION"}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-tight mb-6">
-              Watch a preview of our<br />
-              Live <span className="text-accent-red">₹199 Session</span>
+              See The Live It Up<br />
+              Transformation <span className="text-accent-red">In Action</span>
             </h2>
             <p className="text-black/60 text-sm md:text-base font-light leading-relaxed mb-8 max-w-md">
-              See exactly what you will discover in our 90-minute live interactive masterclass. Watch a preview of how we analyze personal styles, upgrade wardrobes, and build unstoppable confidence.
+              Watch how we help our clients transform their image, style, confidence, and overall personal presentation to unlock new professional and social heights.
             </p>
 
             {/* Icons indicators */}
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="flex items-center gap-2 border border-black/10 px-4 py-2 rounded-full bg-secondary-bg">
                 <Star className="w-3.5 h-3.5 text-accent-gold" />
-                <span className="text-xs font-semibold text-black/80">Live Masterclass</span>
+                <span className="text-xs font-semibold text-black/80">Real Stories</span>
               </div>
               <div className="flex items-center gap-2 border border-black/10 px-4 py-2 rounded-full bg-secondary-bg">
                 <Sparkles className="w-3.5 h-3.5 text-accent-gold" />
-                <span className="text-xs font-semibold text-black/80">Interactive Q&A</span>
+                <span className="text-xs font-semibold text-black/80">Real People</span>
               </div>
               <div className="flex items-center gap-2 border border-black/10 px-4 py-2 rounded-full bg-secondary-bg">
                 <TrendingUp className="w-3.5 h-3.5 text-accent-gold" />
-                <span className="text-xs font-semibold text-black/80">Practical Tools</span>
+                <span className="text-xs font-semibold text-black/80">Real Results</span>
               </div>
             </div>
 
@@ -55,7 +55,7 @@ export default function FeaturedVideo() {
                 className="inline-flex items-center gap-3 bg-accent-red hover:bg-accent-red/90 text-white text-xs font-bold uppercase tracking-wider px-6 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl shadow-accent-red/20 border border-accent-gold/20 cursor-pointer"
               >
                 <Play className="w-4 h-4 fill-white" />
-                Watch Session Preview
+                WATCH VIDEO
               </button>
             </div>
           </motion.div>
