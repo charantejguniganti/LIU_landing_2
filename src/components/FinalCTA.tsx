@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Calendar, MessageSquare, AlertCircle } from "lucide-react";
+import Magnetic from "@/components/Magnetic";
 
 export default function FinalCTA() {
   // Scarcity Countdown Timer
@@ -76,30 +77,34 @@ export default function FinalCTA() {
           {/* Call to Actions */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* WhatsApp CTA */}
-            <a
-              href="https://wa.me/919999999999"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-4 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center"
-            >
-              <MessageSquare className="w-5 h-5 text-white" />
-              <div className="text-left">
-                <p className="text-xs font-semibold uppercase tracking-wider">Yes! I Want To Transform</p>
-                <p className="text-[10px] text-white/80">Chat with experts on WhatsApp</p>
-              </div>
-            </a>
+            <Magnetic>
+              <a
+                href="https://wa.me/919999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-4 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center"
+              >
+                <MessageSquare className="w-5 h-5 text-white" />
+                <div className="text-left">
+                  <p className="text-xs font-semibold uppercase tracking-wider">Yes! I Want To Transform</p>
+                  <p className="text-[10px] text-white/80">Chat with experts on WhatsApp</p>
+                </div>
+              </a>
+            </Magnetic>
 
             {/* Calendar CTA */}
-            <button
-              onClick={() => alert("Consultation Form Opened")}
-              className="flex items-center gap-3 bg-accent-red hover:bg-accent-red/90 text-white px-6 py-4 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center border border-accent-gold/25 cursor-pointer"
-            >
-              <Calendar className="w-5 h-5 text-white" />
-              <div className="text-left">
-                <p className="text-xs font-semibold uppercase tracking-wider">Book Free Consultation</p>
-                <p className="text-[10px] text-white/80">Select call date & time</p>
-              </div>
-            </button>
+            <Magnetic>
+              <button
+                onClick={() => alert("Consultation Form Opened")}
+                className="flex items-center gap-3 bg-accent-red hover:bg-accent-red/90 text-white px-6 py-4 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center border border-accent-gold/25 cursor-pointer"
+              >
+                <Calendar className="w-5 h-5 text-white" />
+                <div className="text-left">
+                  <p className="text-xs font-semibold uppercase tracking-wider">Book Free Consultation</p>
+                  <p className="text-[10px] text-white/80">Select call date & time</p>
+                </div>
+              </button>
+            </Magnetic>
           </div>
 
         </div>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { CheckCircle2, MessageSquare, Calendar, Users, Briefcase, MapPin, Award } from "lucide-react";
 import { motion } from "framer-motion";
+import Magnetic from "@/components/Magnetic";
 
 export default function Hero() {
   const experiences = [
@@ -70,34 +71,38 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               {/* WhatsApp CTA */}
-              <a
-                href="https://wa.me/919999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-green-500/10 group"
-              >
-                <div className="bg-white/20 p-2 rounded-lg">
-                  <MessageSquare className="w-5 h-5 text-white" />
-                </div>
-                <div className="text-left">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-white/95">Yes! I Want To Transform</p>
-                  <p className="text-[10px] text-white/80">Chat with our experts on WhatsApp</p>
-                </div>
-              </a>
+              <Magnetic>
+                <a
+                  href="https://wa.me/919999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-green-500/10 group"
+                >
+                  <div className="bg-white/20 p-2 rounded-lg">
+                    <MessageSquare className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white/95">Yes! I Want To Transform</p>
+                    <p className="text-[10px] text-white/80">Chat with our experts on WhatsApp</p>
+                  </div>
+                </a>
+              </Magnetic>
 
               {/* Consultation CTA */}
-              <a
-                href="#cta"
-                className="flex items-center gap-3 bg-transparent border border-white/10 hover:border-accent-gold/45 text-white px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-white/5"
-              >
-                <div className="bg-white/5 p-2 rounded-lg border border-white/10">
-                  <Calendar className="w-5 h-5 text-accent-gold" />
-                </div>
-                <div className="text-left">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-white">Book a Free Consultation</p>
-                  <p className="text-[10px] text-white/60">Speak to our image expert</p>
-                </div>
-              </a>
+              <Magnetic>
+                <a
+                  href="#cta"
+                  className="flex items-center gap-3 bg-transparent border border-white/10 hover:border-accent-gold/45 text-white px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-white/5"
+                >
+                  <div className="bg-white/5 p-2 rounded-lg border border-white/10">
+                    <Calendar className="w-5 h-5 text-accent-gold" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white">Book a Free Consultation</p>
+                    <p className="text-[10px] text-white/60">Speak to our image expert</p>
+                  </div>
+                </a>
+              </Magnetic>
             </div>
           </motion.div>
 

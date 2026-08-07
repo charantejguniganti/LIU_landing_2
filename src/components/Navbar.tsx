@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import Magnetic from "@/components/Magnetic";
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -63,13 +65,15 @@ export default function Navbar() {
 
           {/* CTA Action */}
           <div className="hidden md:block">
-            <a
-              href="#cta"
-              className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-accent-red/20 border border-accent-gold/30"
-            >
-              <Calendar className="w-4 h-4" />
-              Book Free Consultation
-            </a>
+            <Magnetic>
+              <a
+                href="#cta"
+                className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-accent-red/20 border border-accent-gold/30"
+              >
+                <Calendar className="w-4 h-4" />
+                Book Free Consultation
+              </a>
+            </Magnetic>
           </div>
 
           {/* Mobile Menu Button */}
