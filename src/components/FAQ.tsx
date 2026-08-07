@@ -9,24 +9,28 @@ export default function FAQ() {
 
   const faqs = [
     {
-      q: "What exactly is Image Consulting?",
-      a: "Image Consulting is a professional process of evaluating and upgrading your appearance, grooming, wardrobe, body language, and vocal styling to project confidence, authority, and personal alignment. It is designed to match who you are on the inside with what you display on the outside.",
+      q: "Who is this session for?",
+      a: "This session is designed for working professionals, managers, entrepreneurs, and anyone looking to command more authority, build a premium personal brand, and upgrade their wardrobe styling.",
     },
     {
-      q: "Who is the Personal Image Transformation Program for?",
-      a: "This program is designed for executives, business owners, public speakers, and ambitious professionals who recognize that their personal brand, image, and style play a critical role in their professional success and self-esteem.",
+      q: "Is the session live?",
+      a: "Yes, it is a 100% live and interactive session. You can ask questions directly to our certified image consultants during the Q&A segment.",
     },
     {
-      q: "How long does the entire transformation process take?",
-      a: "Our typical program lasts between 4 to 8 weeks. This includes the initial consultation, wardrobe analysis, customized style maps, grooming upgrades, body language styling, and follow-up support.",
+      q: "Will I get the recording?",
+      a: "Yes! All registered participants who purchase the ₹199 ticket will receive access to the session recording for 7 days, so you can review the style guides anytime.",
     },
     {
-      q: "Do you help with wardrobe shopping and styling?",
-      a: "Yes! During our styling phase, we curate specific lists, fit recommendations, and coordinate shopping assistance (either online or accompanied in-person) to build a wardrobe that matches your unique body shape and personality.",
+      q: "Can beginners join?",
+      a: "Absolutely. The transformation framework is built from the ground up, starting with simple daily styling rules that anyone can apply immediately.",
     },
     {
-      q: "Can the program be done online, or is it fully in-person?",
-      a: "We offer both! We conduct highly immersive in-person sessions at our luxury lounges in major Indian cities, as well as fully optimized virtual consultations for remote clients.",
+      q: "How do I attend?",
+      a: "Once you reserve your seat, you will receive a Zoom link and calendar invite via email and WhatsApp. Just click the link to join on Sunday at 7:00 PM.",
+    },
+    {
+      q: "What happens after payment?",
+      a: "Immediately after your secure payment of ₹199, you will get instant access to the bonus materials (Checklists & PDFs) and a link to join the exclusive WhatsApp community.",
     },
   ];
 

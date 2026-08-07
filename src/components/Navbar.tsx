@@ -71,7 +71,7 @@ export default function Navbar() {
                 className="inline-flex items-center gap-2 bg-accent-red hover:bg-accent-red/90 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-accent-red/20 border border-accent-gold/30"
               >
                 <Calendar className="w-4 h-4" />
-                Book Free Consultation
+                Reserve My Seat
               </a>
             </Magnetic>
           </div>
@@ -116,7 +116,7 @@ export default function Navbar() {
                 className="w-full text-center bg-accent-red hover:bg-accent-red/90 text-white text-sm font-semibold uppercase tracking-wider py-4 rounded-full transition-all border border-accent-gold/30 flex items-center justify-center gap-2"
               >
                 <Calendar className="w-4 h-4" />
-                Book Free Consultation
+                Reserve My Seat
               </a>
             </div>
           </motion.div>

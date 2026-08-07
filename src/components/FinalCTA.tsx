@@ -43,15 +43,15 @@ export default function FinalCTA() {
           
           <div className="inline-flex items-center gap-2 mb-6 bg-accent-red/10 border border-accent-red/30 px-4 py-1.5 rounded-full text-accent-red">
             <AlertCircle className="w-4 h-4" />
-            <span className="text-[10px] font-bold uppercase tracking-wider">Limited Consultations Available This Week</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">Next Live Session: Sunday @ 7:00 PM | Limited Seats</span>
           </div>
 
           <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
-            Ready To Look, Feel & Live Your Best?
+            Ready to Transform Your Image?
           </h2>
           
           <p className="text-white/60 text-xs md:text-sm font-light max-w-xl mx-auto mb-10 leading-relaxed">
-            Book your free 1-on-1 personal consultation call. Our certified image experts will analyze your style profiles and guide you on your transformation blueprint.
+            Join hundreds of professionals who are investing just ₹199 to improve their confidence, style, and personal brand.
           </p>
 
           {/* Countdown Clock */}
@@ -76,34 +76,32 @@ export default function FinalCTA() {
 
           {/* Call to Actions */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {/* WhatsApp CTA */}
-            <Magnetic>
-              <a
-                href="https://wa.me/919999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-4 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center"
-              >
-                <MessageSquare className="w-5 h-5 text-white" />
-                <div className="text-left">
-                  <p className="text-xs font-semibold uppercase tracking-wider">Yes! I Want To Transform</p>
-                  <p className="text-[10px] text-white/80">Chat with experts on WhatsApp</p>
-                </div>
-              </a>
-            </Magnetic>
-
-            {/* Calendar CTA */}
+            {/* Primary CTA */}
             <Magnetic>
               <button
-                onClick={() => alert("Consultation Form Opened")}
+                onClick={() => alert("Redirecting to ₹199 Payment Secure Gateway...")}
                 className="flex items-center gap-3 bg-accent-red hover:bg-accent-red/90 text-white px-6 py-4 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center border border-accent-gold/25 cursor-pointer"
               >
                 <Calendar className="w-5 h-5 text-white" />
                 <div className="text-left">
-                  <p className="text-xs font-semibold uppercase tracking-wider">Book Free Consultation</p>
-                  <p className="text-[10px] text-white/80">Select call date & time</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider">Reserve My ₹199 Seat</p>
+                  <p className="text-[10px] text-white/80">Book My Live Session Slot</p>
                 </div>
               </button>
+            </Magnetic>
+
+            {/* Secondary CTA */}
+            <Magnetic>
+              <a
+                href="#transformation"
+                className="flex items-center gap-3 bg-transparent border border-white/10 hover:border-accent-gold/45 text-white px-6 py-4 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center hover:bg-white/5"
+              >
+                <MessageSquare className="w-5 h-5 text-accent-gold" />
+                <div className="text-left">
+                  <p className="text-xs font-semibold uppercase tracking-wider">Watch Preview</p>
+                  <p className="text-[10px] text-white/60">See what you will learn</p>
+                </div>
+              </a>
             </Magnetic>
           </div>
 

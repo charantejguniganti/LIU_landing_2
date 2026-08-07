@@ -1,22 +1,31 @@
 "use client";
 
-import { Check, ArrowRight, ShieldCheck, Lock, UserCheck, MessageSquare } from "lucide-react";
+import { Check, ShieldCheck, Lock, UserCheck, Gift } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Programs() {
   const valueChecklist = [
-    "Personalised 1-on-1 Guidance",
-    "Expert Image Consultants",
-    "Proven Transformation Process",
-    "Lifetime Impact & Confidence",
+    "Live 90-Minute Session",
+    "Interactive Q&A Session",
+    "Exclusive Bonus PDFs",
+    "Class Recording Access",
+    "WhatsApp Community Entry",
   ];
 
   const mainFeatures = [
-    "1-on-1 Consultation",
-    "Wardrobe & Styling",
-    "Grooming & Look Enhancement",
-    "Personal Branding",
-    "Follow-up Support",
+    "Live Interaction",
+    "Styling & Wardrobe Maps",
+    "Grooming & Posture Secrets",
+    "Live Q&A Session",
+    "Ongoing Community Support",
+  ];
+
+  const bonuses = [
+    { title: "Bonus 1: Style Checklist", value: "Worth ₹999" },
+    { title: "Bonus 2: Wardrobe Guide", value: "Worth ₹1499" },
+    { title: "Bonus 3: Color Guide PDF", value: "Worth ₹999" },
+    { title: "Bonus 4: Grooming Checklist", value: "Worth ₹799" },
+    { title: "Bonus 5: WhatsApp Community", value: "Free Entry" },
   ];
 
   return (
@@ -36,7 +45,7 @@ export default function Programs() {
               Invest In Yourself
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-[#111111] mb-6">
-              {"It's Time To"}<br />Live It Up!
+              {"It's Time To"}<br />Stand Out!
             </h2>
             
             <ul className="space-y-4 mb-8">
@@ -50,19 +59,14 @@ export default function Programs() {
               ))}
             </ul>
 
-            {/* Direct WhatsApp Action */}
-            <a
-              href="https://wa.me/919999999999"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white px-5 py-3 rounded-xl transition-all duration-300 shadow-md shadow-green-500/10 w-fit"
-            >
-              <MessageSquare className="w-4 h-4 fill-white" />
-              <div className="text-left">
-                <p className="text-[10px] font-bold uppercase tracking-wider">Yes! I Want To Transform</p>
-                <p className="text-[8px] text-white/80">Chat with our experts on WhatsApp</p>
+            {/* Price Indicator */}
+            <div className="bg-white/40 border border-black/5 p-4 rounded-xl">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-black/45 block mb-1">Session Access Fee</span>
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl font-extrabold text-black">₹199</span>
+                <span className="text-xs text-black/40 line-through">₹999</span>
               </div>
-            </a>
+            </div>
           </motion.div>
 
           {/* Center Column: Main Program Card */}
@@ -75,20 +79,21 @@ export default function Programs() {
           >
             <div className="bg-white rounded-3xl shadow-xl border-2 border-accent-red relative overflow-hidden flex flex-col justify-between w-full">
               {/* Highlight Tag */}
-              <div className="bg-accent-red text-white text-[10px] font-extrabold uppercase tracking-[0.2em] text-center py-2">
-                Most Loved
+              <div className="bg-accent-red text-white text-[10px] font-extrabold uppercase tracking-[0.2em] text-center py-2 animate-pulse">
+                Limited Time Offer
               </div>
 
               <div className="p-8 flex-1 flex flex-col justify-between">
                 <div>
                   <h3 className="font-serif text-xl font-bold text-black mb-1">
-                    Personal Image Transformation Program
+                    Live Image Transformation Session
                   </h3>
-                  <p className="text-xs text-black/40 mb-6">Complete transformation experience</p>
+                  <p className="text-xs text-black/40 mb-6">Complete masterclass experience</p>
 
                   <div className="mb-6">
-                    <span className="text-3xl font-extrabold text-black">₹24,999</span>
-                    <span className="text-xs text-black/50 block mt-1">One Time Investment</span>
+                    <span className="text-3xl font-extrabold text-black">₹199</span>
+                    <span className="text-xs text-black/40 line-through ml-2">₹999</span>
+                    <span className="text-xs text-accent-red font-semibold block mt-1">{"Today's Special Price"}</span>
                   </div>
 
                   <ul className="space-y-3 mb-8">
@@ -105,13 +110,13 @@ export default function Programs() {
                   href="#cta"
                   className="block text-center bg-accent-red hover:bg-accent-red/90 text-white text-[11px] font-bold uppercase tracking-wider py-4 rounded-xl transition-all shadow-md"
                 >
-                  Book Free Consultation
+                  Reserve My ₹199 Seat
                 </a>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column: Other Programs */}
+          {/* Right Column: Bonuses */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -120,38 +125,27 @@ export default function Programs() {
             className="lg:col-span-4 flex flex-col justify-between gap-6"
           >
             <div className="flex-1 flex flex-col justify-center">
-              <h3 className="font-serif text-lg font-bold text-black/50 uppercase tracking-wider mb-6">
-                Other Programs
-              </h3>
-
-              {/* Style Makeover Session */}
-              <div className="bg-white p-6 rounded-2xl shadow-md border border-black/5 hover:border-accent-gold/45 hover:shadow-lg transition-all duration-300 group cursor-pointer mb-4">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h4 className="font-serif text-base font-bold text-black group-hover:text-accent-red transition-colors">
-                      Style Makeover Session
-                    </h4>
-                    <p className="text-sm font-semibold text-black/70 mt-1">₹9,999</p>
-                  </div>
-                  <div className="p-2.5 rounded-full bg-accent-gold/10 group-hover:bg-accent-red group-hover:text-white transition-colors text-accent-gold">
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
+              <div className="flex items-center gap-2 mb-6">
+                <Gift className="w-5 h-5 text-accent-red" />
+                <h3 className="font-serif text-lg font-bold text-black uppercase tracking-wider">
+                  Free Bonuses Included
+                </h3>
               </div>
 
-              {/* Wardrobe Detox */}
-              <div className="bg-white p-6 rounded-2xl shadow-md border border-black/5 hover:border-accent-gold/45 hover:shadow-lg transition-all duration-300 group cursor-pointer">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h4 className="font-serif text-base font-bold text-black group-hover:text-accent-red transition-colors">
-                      Wardrobe Detox
-                    </h4>
-                    <p className="text-sm font-semibold text-black/70 mt-1">₹14,999</p>
+              {/* Bonus Items List */}
+              <div className="space-y-3">
+                {bonuses.map((bonus, idx) => (
+                  <div key={idx} className="bg-white p-4 rounded-xl shadow-sm border border-black/5 hover:border-accent-gold/45 transition-all duration-300 flex justify-between items-center group cursor-pointer">
+                    <div>
+                      <h4 className="font-serif text-xs font-bold text-black group-hover:text-accent-red transition-colors">
+                        {bonus.title}
+                      </h4>
+                    </div>
+                    <div className="text-[10px] font-extrabold uppercase text-accent-gold bg-accent-gold/10 px-2 py-1 rounded">
+                      {bonus.value}
+                    </div>
                   </div>
-                  <div className="p-2.5 rounded-full bg-accent-gold/10 group-hover:bg-accent-red group-hover:text-white transition-colors text-accent-gold">
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -163,11 +157,11 @@ export default function Programs() {
               </div>
               <div className="flex flex-col items-center text-center">
                 <Lock className="w-5 h-5 text-accent-gold mb-1" />
-                <span className="text-[9px] uppercase tracking-wider font-bold text-black/50">100% Confidential</span>
+                <span className="text-[9px] uppercase tracking-wider font-bold text-black/50">100% Secure</span>
               </div>
               <div className="flex flex-col items-center text-center">
                 <UserCheck className="w-5 h-5 text-accent-gold mb-1" />
-                <span className="text-[9px] uppercase tracking-wider font-bold text-black/50">Expert Support</span>
+                <span className="text-[9px] uppercase tracking-wider font-bold text-black/50">Expert Led</span>
               </div>
             </div>
           </motion.div>

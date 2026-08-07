@@ -1,39 +1,49 @@
 "use client";
 
-import { User, Shirt, Library, Sparkles, UserCheck, Award, ArrowRight } from "lucide-react";
+import { UserCheck, Award, ArrowRight, Shirt, Archive, Palette, Briefcase, Zap, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Services() {
   const serviceList = [
     {
-      title: "Image Consulting",
-      desc: "Discover your best self through expert analysis and personalised guidance.",
-      icon: User,
-    },
-    {
-      title: "Personal Styling",
-      desc: "Curated wardrobe and style recommendations that reflect your personality.",
+      title: "Module 1: Personal Styling",
+      desc: "Learn to identify your silhouette and select silhouettes that reflect your unique archetype.",
       icon: Shirt,
     },
     {
-      title: "Wardrobe Revamp",
-      desc: "Declutter, optimize and build a wardrobe that truly works for you.",
-      icon: Library,
-    },
-    {
-      title: "Grooming & Look",
-      desc: "Hair, skincare, grooming and overall look enhancement.",
-      icon: Sparkles,
-    },
-    {
-      title: "Body Language",
-      desc: "Confident posture, communication & presence training.",
+      title: "Module 2: Body Language",
+      desc: "Master non-verbal communication, posture, eye contact, and authentic presence.",
       icon: UserCheck,
     },
     {
-      title: "Personal Branding",
-      desc: "Build a strong personal brand that creates the right impact.",
+      title: "Module 3: Wardrobe Secrets",
+      desc: "Build a timeless capsule wardrobe that reduces clutter and matches any high-end occasion.",
+      icon: Archive,
+    },
+    {
+      title: "Module 4: Color Psychology",
+      desc: "Discover how colors influence perception, mood, and assertiveness in professional meetings.",
+      icon: Palette,
+    },
+    {
+      title: "Module 5: Executive Presence",
+      desc: "Command authority, build gravity, and capture any room you step into.",
+      icon: Briefcase,
+    },
+    {
+      title: "Module 6: Personal Branding",
+      desc: "Craft a distinct public identity that clearly communicates your value and status.",
       icon: Award,
+    },
+    {
+      title: "Module 7: Confidence Building",
+      desc: "Unlock psychological mental shifts to speak confidently and conquer social anxiety.",
+      icon: Zap,
+    },
+    {
+      title: "Module 8: Live Q&A",
+      desc: "Get direct personalized feedback and have your styling queries answered in real-time.",
+      icon: MessageSquare,
     },
   ];
 
@@ -41,7 +51,7 @@ export default function Services() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
       },
     },
   };
@@ -62,10 +72,10 @@ export default function Services() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-accent-red text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
-            Our Services
+            What You Will Learn
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-[#111111]">
-            How We Transform Your Image
+            Transformation Curriculum
           </h2>
         </div>
 
@@ -75,7 +85,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
         >
           {serviceList.map((service, idx) => {
             const IconComponent = service.icon;
@@ -84,9 +94,9 @@ export default function Services() {
                 key={idx}
                 variants={cardVariants}
                 whileHover={{ 
-                  y: -10, 
-                  scale: 1.03,
-                  boxShadow: "0 20px 30px rgba(201, 169, 106, 0.15)",
+                  y: -8, 
+                  scale: 1.02,
+                  boxShadow: "0 15px 25px rgba(201, 169, 106, 0.12)",
                 }}
                 className="bg-white p-6 rounded-2xl border border-black/5 hover:border-accent-gold transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
               >
@@ -114,10 +124,10 @@ export default function Services() {
         {/* Explore Button */}
         <div className="text-center">
           <a
-            href="#programs"
+            href="#cta"
             className="inline-flex items-center gap-2 border border-black/10 hover:border-accent-red/50 hover:bg-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 group text-black/80 hover:text-accent-red"
           >
-            Explore All Services
+            Reserve My ₹199 Seat
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
           </a>
         </div>

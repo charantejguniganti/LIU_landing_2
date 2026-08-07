@@ -31,10 +31,10 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
 
 export default function Stats() {
   const statsList = [
-    { target: 10000, suffix: "+", label: "Happy Clients" },
-    { target: 98, suffix: "%", label: "Satisfaction Rate" },
-    { target: 20, suffix: "+", label: "Cities Across India" },
-    { target: 5, suffix: "+", label: "Years of Impact" },
+    { target: 10000, suffix: "+", label: "Clients" },
+    { target: 20, suffix: "+", label: "Cities" },
+    { target: 98, suffix: "%", label: "Satisfaction" },
+    { target: 2018, suffix: "", label: "Trusted Since" },
   ];
 
   return (

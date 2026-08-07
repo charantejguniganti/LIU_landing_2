@@ -1,26 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, MessageSquare, Calendar, Users, Briefcase, MapPin, Award } from "lucide-react";
+import { CheckCircle2, Calendar, Users, Briefcase, MapPin, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import Magnetic from "@/components/Magnetic";
 
 export default function Hero() {
   const experiences = [
-    "Personal Style That Defines You",
-    "Confident Body Language",
-    "Grooming That Makes Impact",
-    "Wardrobe That Works For You",
-    "Colors That Bring Out Your Best",
-    "A Powerful Personal Brand",
-    "Lasting Confidence & Presence",
+    "Image Analysis",
+    "Style Framework",
+    "Grooming Tips",
+    "Body Language",
+    "Q&A Session",
+    "Bonus Workbook",
   ];
 
   const highlights = [
-    { text: "Expert Consultants" },
-    { text: "Personalised Approach" },
-    { text: "Proven Results" },
-    { text: "Complete Transformation" },
+    { text: "Live Interactive Class" },
+    { text: "Practical Frameworks" },
+    { text: "90-Minute Intensive" },
+    { text: "Bonus Resources" },
   ];
 
   return (
@@ -42,21 +41,28 @@ export default function Hero() {
             {/* Capsule Tag */}
             <div className="inline-flex mb-6">
               <span className="bg-accent-red/10 border border-accent-red/30 text-accent-red text-[11px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full">
-                {"India's Leading Image Consulting Brand"}
+                {"Live Image Transformation Session"}
               </span>
             </div>
 
             {/* Title */}
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
-              Look Better.<br />
-              Feel Confident.<br />
-              <span className="text-accent-red">Live It Up.</span>
+              Transform Your Image.<br />
+              Build Confidence.<br />
+              <span className="text-accent-red">Stand Out.</span>
             </h1>
 
             {/* Description */}
-            <p className="text-white/70 text-base md:text-lg font-light leading-relaxed mb-8 max-w-xl">
-              Personalised Image Consulting to help you look your best, feel confident, and create the right first impression.
+            <p className="text-white/70 text-base md:text-lg font-light leading-relaxed mb-6 max-w-xl">
+              Join our exclusive Live Image Transformation Session and learn how to improve your personal style, body language, wardrobe, confidence, and executive presence.
             </p>
+
+            {/* Scarcity / Price Capsule */}
+            <div className="inline-flex gap-4 items-center mb-8 border border-white/5 bg-white/[0.02] py-2.5 px-4 rounded-xl w-fit">
+              <span className="text-accent-gold font-extrabold text-lg">Only ₹199</span>
+              <span className="w-1.5 h-1.5 bg-accent-red rounded-full animate-ping" />
+              <span className="text-xs tracking-wider uppercase font-semibold text-white/60">Live. Interactive. Practical.</span>
+            </div>
 
             {/* Highlights bullet points */}
             <div className="grid grid-cols-2 gap-4 mb-8">
@@ -70,36 +76,34 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              {/* WhatsApp CTA */}
+              {/* Primary CTA */}
               <Magnetic>
                 <a
-                  href="https://wa.me/919999999999"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-green-500/10 group"
+                  href="#cta"
+                  className="flex items-center gap-3 bg-accent-red hover:bg-accent-red/90 text-white px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-accent-red/20 group cursor-pointer"
                 >
                   <div className="bg-white/20 p-2 rounded-lg">
-                    <MessageSquare className="w-5 h-5 text-white" />
+                    <Award className="w-5 h-5 text-white" />
                   </div>
                   <div className="text-left">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-white/95">Yes! I Want To Transform</p>
-                    <p className="text-[10px] text-white/80">Chat with our experts on WhatsApp</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white/95">Reserve My ₹199 Seat</p>
+                    <p className="text-[10px] text-white/80">Claim your live access slot</p>
                   </div>
                 </a>
               </Magnetic>
 
-              {/* Consultation CTA */}
+              {/* Secondary CTA */}
               <Magnetic>
                 <a
-                  href="#cta"
+                  href="#transformation"
                   className="flex items-center gap-3 bg-transparent border border-white/10 hover:border-accent-gold/45 text-white px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-white/5"
                 >
                   <div className="bg-white/5 p-2 rounded-lg border border-white/10">
                     <Calendar className="w-5 h-5 text-accent-gold" />
                   </div>
                   <div className="text-left">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-white">Book a Free Consultation</p>
-                    <p className="text-[10px] text-white/60">Speak to our image expert</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white">Watch Session Preview</p>
+                    <p className="text-[10px] text-white/60">See what you will learn</p>
                   </div>
                 </a>
               </Magnetic>
@@ -125,32 +129,45 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column (You'll Experience Card) */}
+          {/* Right Column (Floating Premium Offer Card) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="lg:col-span-3"
           >
-            <div className="bg-white/[0.03] backdrop-blur-sm border border-white/5 p-8 rounded-3xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-accent-gold/5 blur-2xl rounded-full" />
+            <div className="bg-white/[0.03] backdrop-blur-sm border-2 border-accent-gold/30 p-8 rounded-3xl relative overflow-hidden shadow-xl shadow-accent-gold/5">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-accent-gold/10 blur-2xl rounded-full" />
               
-              <h3 className="font-serif text-xl font-bold mb-6 text-white">
-                {"You'll"} <span className="text-accent-gold">Experience</span>
-              </h3>
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <span className="text-[9px] uppercase tracking-wider font-extrabold text-accent-red bg-accent-red/10 px-2.5 py-1 rounded-md border border-accent-red/25">Live Session</span>
+                  <h3 className="font-serif text-2xl font-extrabold mt-2 text-white">
+                    ₹199 <span className="text-xs font-normal text-white/50 line-through">₹999</span>
+                  </h3>
+                </div>
+                <div className="text-right">
+                  <span className="text-[10px] tracking-wider uppercase font-bold text-accent-gold font-sans">Only</span>
+                </div>
+              </div>
 
-              <ul className="space-y-4 mb-6">
+              <p className="text-white/60 text-xs font-medium uppercase tracking-wider mb-4 border-b border-white/5 pb-2">
+                90-Minute Live Session
+              </p>
+
+              <ul className="space-y-3.5 mb-6">
                 {experiences.map((exp, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-accent-red rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-white/80 text-sm font-light leading-snug">{exp}</span>
+                  <li key={i} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-accent-gold flex-shrink-0 mt-0.5" />
+                    <span className="text-white/80 text-xs font-light leading-snug">{exp}</span>
                   </li>
                 ))}
               </ul>
 
-              <p className="text-accent-gold text-xs font-semibold uppercase tracking-wider">
-                & Much More...
-              </p>
+              <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[10px]">
+                <span className="text-accent-red font-bold uppercase tracking-wider animate-pulse">Seats Filling Fast</span>
+                <span className="text-white/40">Limited Spots</span>
+              </div>
             </div>
           </motion.div>
 
@@ -169,7 +186,7 @@ export default function Hero() {
             </div>
             <div>
               <p className="text-2xl font-bold text-white tracking-tight">10,000+</p>
-              <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Happy Clients</p>
+              <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Clients</p>
             </div>
           </div>
 
@@ -178,8 +195,8 @@ export default function Hero() {
               <Briefcase className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-white tracking-tight">50+</p>
-              <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Image Experts</p>
+              <p className="text-2xl font-bold text-white tracking-tight">20+</p>
+              <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Cities</p>
             </div>
           </div>
 
@@ -188,8 +205,8 @@ export default function Hero() {
               <MapPin className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-white tracking-tight">20+</p>
-              <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Cities Across India</p>
+              <p className="text-2xl font-bold text-white tracking-tight">98%</p>
+              <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Satisfaction</p>
             </div>
           </div>
 
@@ -198,8 +215,8 @@ export default function Hero() {
               <Award className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-white tracking-tight">5 Star</p>
-              <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Rated Services</p>
+              <p className="text-2xl font-bold text-white tracking-tight">Since 2018</p>
+              <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Trusted Brand</p>
             </div>
           </div>
         </motion.div>

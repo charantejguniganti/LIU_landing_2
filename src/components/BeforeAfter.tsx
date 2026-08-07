@@ -9,19 +9,19 @@ export default function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
 
   const beforePoints = [
-    "No Personal Style",
+    "Unstyled Appearance",
     "Low Confidence",
-    "Wrong Wardrobe Choices",
-    "No Clarity on Image",
-    "Struggle to Make Impression",
+    "Outdated Wardrobe",
+    "Weak First Impression",
+    "Unclear Personal Brand",
   ];
 
   const afterPoints = [
-    "Personal Style & Confidence",
-    "Wardrobe That Works",
-    "Strong First Impression",
-    "Clarity & Direction",
-    "Impact in Every Interaction",
+    "Better Dressing",
+    "Improved Confidence",
+    "Better Communication",
+    "Executive Presence",
+    "Personal Branding",
   ];
 
   return (
@@ -124,7 +124,7 @@ export default function BeforeAfter() {
                 transition={{ duration: 0.6 }}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-black/5"
               >
-                <h4 className="font-serif text-sm font-bold text-black/40 uppercase tracking-wider mb-4 border-b border-black/5 pb-2">Before Consulting</h4>
+                <h4 className="font-serif text-sm font-bold text-black/40 uppercase tracking-wider mb-4 border-b border-black/5 pb-2">Before the Session</h4>
                 <ul className="space-y-3">
                   {beforePoints.map((pt, idx) => (
                     <li key={idx} className="flex items-center gap-2">
@@ -143,7 +143,7 @@ export default function BeforeAfter() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-accent-red/25 shadow-accent-red/5"
               >
-                <h4 className="font-serif text-sm font-bold text-accent-red uppercase tracking-wider mb-4 border-b border-accent-red/10 pb-2">After Consulting</h4>
+                <h4 className="font-serif text-sm font-bold text-accent-red uppercase tracking-wider mb-4 border-b border-accent-red/10 pb-2">After Attending the Live Session</h4>
                 <ul className="space-y-3">
                   {afterPoints.map((pt, idx) => (
                     <li key={idx} className="flex items-center gap-2">
