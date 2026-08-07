@@ -36,7 +36,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 flex flex-col justify-center"
+            className="lg:col-span-4 flex flex-col justify-center z-10"
           >
             {/* Capsule Tag */}
             <div className="inline-flex mb-6">
@@ -110,24 +110,30 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Middle Column (Model Image) */}
+          {/* Middle Column (Model Image Redesigned) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-4 flex justify-center relative min-h-[450px] md:min-h-[520px]"
+            className="lg:col-span-5 flex justify-center relative min-h-[520px] md:min-h-[650px] lg:mt-[-70px] mt-[-30px] z-20"
           >
-            {/* Red Concentric Circular Target Design Behind Model */}
-            <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none scale-100 md:scale-125">
-              <div className="absolute w-[200px] h-[200px] rounded-full border border-accent-red/35" />
-              <div className="absolute w-[320px] h-[320px] rounded-full border border-accent-red/20" />
-              <div className="absolute w-[440px] h-[440px] rounded-full border border-accent-red/10" />
-              <div className="absolute w-[560px] h-[560px] rounded-full border border-accent-red/5" />
-              {/* Central Red Accent Glow */}
-              <div className="absolute w-[280px] h-[280px] bg-accent-red/15 rounded-full blur-[90px]" />
+            {/* Concentric Circles & Gold Glow Behind Torso */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none scale-[0.7] md:scale-[0.85] top-[55%] -translate-y-1/2">
+              {/* Soft warm gold glow */}
+              <div className="absolute w-[350px] h-[350px] bg-[#C9A96A]/12 rounded-full blur-[100px]" />
+              
+              {/* Subtle red circles */}
+              <div className="absolute w-[200px] h-[200px] rounded-full border border-accent-red/10" />
+              <div className="absolute w-[320px] h-[320px] rounded-full border border-accent-red/6" />
+              <div className="absolute w-[440px] h-[440px] rounded-full border border-accent-red/3" />
+              <div className="absolute w-[560px] h-[560px] rounded-full border border-accent-red/2" />
             </div>
 
-            <div className="relative w-[320px] md:w-[380px] h-[450px] md:h-[520px]">
+            {/* Grounding Shadow */}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[220px] md:w-[280px] h-[16px] bg-black/80 blur-[14px] rounded-full -z-10" />
+
+            {/* Model Image wrapper */}
+            <div className="relative w-[380px] md:w-[480px] h-[520px] md:h-[650px]">
               <Image
                 src="/images/hero_model.png"
                 alt="Live It Up Premium Consulting"
@@ -143,7 +149,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-3"
+            className="lg:col-span-3 z-10"
           >
             <div className="bg-white/[0.03] backdrop-blur-sm border-2 border-accent-gold/30 p-8 rounded-3xl relative overflow-hidden shadow-xl shadow-accent-gold/5">
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent-gold/10 blur-2xl rounded-full" />
