@@ -34,12 +34,12 @@ export default function Hero() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full z-20 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column (Main Info) */}
+          {/* Left Column (Main Info - widened to 5 columns for proper heading flow) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-4 flex flex-col justify-center z-10"
+            className="lg:col-span-5 flex flex-col justify-center z-10"
           >
             {/* Capsule Tag */}
             <div className="inline-flex mb-6">
@@ -50,9 +50,9 @@ export default function Hero() {
 
             {/* Title */}
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
-              Transform Your Image.<br />
-              Build Confidence.<br />
-              <span className="text-accent-red">Stand Out.</span>
+              {"Transform\u00A0Your\u00A0Image."}<br />
+              {"Build\u00A0Confidence."}<br />
+              <span className="text-accent-red">{"Stand\u00A0Out."}</span>
             </h1>
 
             {/* Description */}
@@ -113,12 +113,12 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Middle Column (Model Image Redesigned) */}
+          {/* Middle Column (Model Image Redesigned - resized to lg:col-span-4 to balance layout) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 flex justify-center relative min-h-[550px] md:min-h-[680px] lg:mt-[-90px] mt-[-30px] z-20"
+            className="lg:col-span-4 flex justify-center relative min-h-[550px] md:min-h-[680px] lg:mt-[-90px] mt-[-30px] z-20"
           >
             {/* Concentric Circles & Gold Glow Behind Chest/Head */}
             <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none scale-[0.7] md:scale-[0.8] top-[38%] -translate-y-1/2">
@@ -147,12 +147,12 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column (Floating Premium Offer Card) */}
+          {/* Right Column (Floating Premium Offer Card pulled closer) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-3 z-10 lg:-translate-x-12 translate-x-0 transition-transform duration-300"
+            className="lg:col-span-3 z-10 lg:-translate-x-6 translate-x-0 transition-transform duration-300"
           >
             <div className="bg-white/[0.03] backdrop-blur-sm border-2 border-accent-gold/30 p-8 rounded-3xl relative overflow-hidden shadow-xl shadow-accent-gold/5">
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent-gold/10 blur-2xl rounded-full" />
