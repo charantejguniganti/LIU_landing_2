@@ -115,17 +115,26 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-4 flex justify-center relative"
+            className="lg:col-span-4 flex justify-center relative min-h-[450px] md:min-h-[520px]"
           >
-            <div className="relative w-[320px] md:w-[380px] h-[450px] md:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+            {/* Red Concentric Circular Target Design Behind Model */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none scale-100 md:scale-125">
+              <div className="absolute w-[200px] h-[200px] rounded-full border border-accent-red/35" />
+              <div className="absolute w-[320px] h-[320px] rounded-full border border-accent-red/20" />
+              <div className="absolute w-[440px] h-[440px] rounded-full border border-accent-red/10" />
+              <div className="absolute w-[560px] h-[560px] rounded-full border border-accent-red/5" />
+              {/* Central Red Accent Glow */}
+              <div className="absolute w-[280px] h-[280px] bg-accent-red/15 rounded-full blur-[90px]" />
+            </div>
+
+            <div className="relative w-[320px] md:w-[380px] h-[450px] md:h-[520px]">
               <Image
                 src="/images/hero_model.png"
                 alt="Live It Up Premium Consulting"
                 fill
                 priority
-                className="object-cover"
+                className="object-contain object-bottom"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent opacity-80" />
             </div>
           </motion.div>
 
