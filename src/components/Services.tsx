@@ -37,6 +37,24 @@ export default function Services() {
     },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { type: "spring", stiffness: 100, damping: 15 } 
+    },
+  } as const;
+
   return (
     <section id="services" className="py-24 bg-[#F7F2EB] text-[#111111] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
@@ -52,22 +70,34 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-16">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-16"
+        >
           {serviceList.map((service, idx) => {
             const IconComponent = service.icon;
             return (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.08 }}
-                className="bg-white p-6 rounded-2xl shadow-md border border-black/5 hover:border-accent-gold/45 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
+                variants={cardVariants}
+                whileHover={{ 
+                  y: -10, 
+                  scale: 1.03,
+                  boxShadow: "0 20px 30px rgba(201, 169, 106, 0.15)",
+                }}
+                className="bg-white p-6 rounded-2xl border border-black/5 hover:border-accent-gold transition-all duration-300 flex flex-col items-center text-center group cursor-pointer"
               >
                 {/* Icon wrapper */}
-                <div className="bg-accent-red/10 p-3 rounded-full border border-accent-red/20 text-accent-red mb-6 transition-transform duration-300 group-hover:scale-110">
+                <motion.div 
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-accent-red/10 p-3 rounded-full border border-accent-red/20 text-accent-red mb-6 transition-transform duration-300"
+                >
                   <IconComponent className="w-6 h-6" />
-                </div>
+                </motion.div>
                 
                 <h3 className="font-serif text-base font-bold mb-3 text-black tracking-wide group-hover:text-accent-red transition-colors">
                   {service.title}
@@ -79,7 +109,7 @@ export default function Services() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Explore Button */}
         <div className="text-center">

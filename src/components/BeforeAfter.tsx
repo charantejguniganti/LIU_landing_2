@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { Check, X, ArrowRight, TrendingUp } from "lucide-react";
+import { Check, X, TrendingUp, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function BeforeAfter() {
+  const [sliderPosition, setSliderPosition] = useState(50);
+
   const beforePoints = [
     "No Personal Style",
     "Low Confidence",
@@ -28,121 +31,166 @@ export default function BeforeAfter() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-accent-red text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
-            Real Transformations
+            Interactive Reveal
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-[#111111]">
+          <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-[#111111] mb-4">
             From Uncertain to <span className="text-accent-red">Unstoppable</span>
           </h2>
+          <p className="text-black/60 text-xs md:text-sm font-medium tracking-wide">
+            Drag the slider to see the impact of our image coaching
+          </p>
         </div>
 
-        {/* Comparison Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
+        {/* Comparison Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-5xl mx-auto">
           
-          {/* Before Card */}
+          {/* Left: Interactive Image Slider */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 bg-white p-6 rounded-3xl shadow-xl border border-black/5 flex flex-col md:flex-row gap-6 items-center"
+            className="lg:col-span-6 flex justify-center"
           >
-            <div className="relative w-[140px] h-[180px] rounded-2xl overflow-hidden grayscale">
-              <Image
-                src="/images/before_model.png"
-                alt="Before Live It Up Consulting"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-serif text-lg font-bold mb-4 text-black/40 uppercase tracking-wider">Before Live It Up</h3>
-              <ul className="space-y-3">
-                {beforePoints.map((pt, idx) => (
-                  <li key={idx} className="flex items-center gap-2">
-                    <X className="w-4 h-4 text-accent-red flex-shrink-0" />
-                    <span className="text-xs font-medium text-black/50 line-through">{pt}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-
-          {/* Central Arrow */}
-          <div className="lg:col-span-2 flex justify-center">
-            <motion.div
-              animate={{ x: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="bg-accent-gold/10 p-4 rounded-full border border-accent-gold/20"
-            >
-              <ArrowRight className="w-6 h-6 text-accent-gold" />
-            </motion.div>
-          </div>
-
-          {/* After Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 bg-white p-6 rounded-3xl shadow-xl border border-black/5 flex flex-col md:flex-row gap-6 items-center"
-          >
-            <div className="relative w-[140px] h-[180px] rounded-2xl overflow-hidden border-2 border-accent-gold">
+            <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-black/5 select-none bg-black">
+              {/* After Image (Color) - Bottom Layer */}
               <Image
                 src="/images/after_model.png"
                 alt="After Live It Up Consulting"
                 fill
+                priority
                 className="object-cover"
               />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-serif text-lg font-bold mb-4 text-accent-red uppercase tracking-wider">After Working With Us</h3>
-              <ul className="space-y-3">
-                {afterPoints.map((pt, idx) => (
-                  <li key={idx} className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-xs font-semibold text-black/80">{pt}</span>
-                  </li>
-                ))}
-              </ul>
+
+              {/* Before Image (Grayscale) - Top Layer with Polygon Clip Path */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
+                }}
+              >
+                <Image
+                  src="/images/before_model.png"
+                  alt="Before Live It Up Consulting"
+                  fill
+                  priority
+                  className="object-cover grayscale"
+                />
+              </div>
+
+              {/* Divider Line */}
+              <div 
+                className="absolute top-0 bottom-0 w-1 bg-accent-gold z-20 pointer-events-none"
+                style={{ left: `${sliderPosition}%` }}
+              >
+                {/* Drag Handle Button */}
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-accent-gold text-[#0B0B0B] flex items-center justify-center shadow-lg border border-white/40">
+                  <Sparkles className="w-4 h-4 animate-pulse" />
+                </div>
+              </div>
+
+              {/* Slider Input Element */}
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={sliderPosition}
+                onChange={(e) => setSliderPosition(Number(e.target.value))}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+                aria-label="Before and After Slider"
+              />
+
+              {/* Before Label Tag */}
+              <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-lg border border-white/10 z-10">
+                BEFORE
+              </div>
+
+              {/* After Label Tag */}
+              <div className="absolute bottom-4 right-4 bg-accent-red/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-wider px-3 py-1.5 rounded-lg border border-accent-gold/20 z-10">
+                AFTER
+              </div>
             </div>
           </motion.div>
 
-        </div>
+          {/* Right: Checklist Details */}
+          <div className="lg:col-span-6 flex flex-col gap-8">
+            {/* Checklist items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Before state */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-white p-6 rounded-2xl shadow-sm border border-black/5"
+              >
+                <h4 className="font-serif text-sm font-bold text-black/40 uppercase tracking-wider mb-4 border-b border-black/5 pb-2">Before Consulting</h4>
+                <ul className="space-y-3">
+                  {beforePoints.map((pt, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <X className="w-3.5 h-3.5 text-accent-red flex-shrink-0" />
+                      <span className="text-xs text-black/50 font-medium line-through">{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
 
-        {/* Confidence Graph Metric */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 bg-white max-w-xl mx-auto p-8 rounded-3xl shadow-lg border border-black/5"
-        >
-          <div className="flex items-center justify-between gap-6">
-            <div>
-              <span className="text-xs uppercase font-bold tracking-wider text-black/45">Their Confidence</span>
-              <p className="text-3xl font-extrabold text-[#111111] mt-1">100%</p>
-              <p className="text-xs text-accent-red font-semibold mt-1">Transformation Rate</p>
+              {/* After state */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white p-6 rounded-2xl shadow-sm border border-accent-red/25 shadow-accent-red/5"
+              >
+                <h4 className="font-serif text-sm font-bold text-accent-red uppercase tracking-wider mb-4 border-b border-accent-red/10 pb-2">After Consulting</h4>
+                <ul className="space-y-3">
+                  {afterPoints.map((pt, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <Check className="w-3.5 h-3.5 text-green-600 flex-shrink-0" />
+                      <span className="text-xs text-black/80 font-bold">{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </div>
-            <div className="flex-1 h-16 relative">
-              {/* Climbing graph drawing */}
-              <svg className="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
-                <motion.path
-                  d="M0,28 Q15,22 30,20 T60,10 T100,2"
-                  fill="none"
-                  stroke="#A52A2A"
-                  strokeWidth="2"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                />
-              </svg>
-            </div>
-            <div className="bg-accent-red/10 p-3 rounded-2xl border border-accent-red/20 text-accent-red">
-              <TrendingUp className="w-5 h-5" />
-            </div>
+
+            {/* Confidence Climbing Graph */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-white p-6 rounded-2xl shadow-md border border-black/5"
+            >
+              <div className="flex items-center justify-between gap-6">
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-black/45">Confidence Level</span>
+                  <p className="text-3xl font-extrabold text-[#111111] mt-1">100%</p>
+                  <p className="text-xs text-accent-red font-semibold mt-1">Transformation Rate</p>
+                </div>
+                <div className="flex-1 h-14 relative">
+                  <svg className="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
+                    <motion.path
+                      d="M0,28 Q15,22 30,20 T60,10 T100,2"
+                      fill="none"
+                      stroke="#A52A2A"
+                      strokeWidth="2.5"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.5, ease: "easeInOut" }}
+                    />
+                  </svg>
+                </div>
+                <div className="bg-accent-red/10 p-3 rounded-xl border border-accent-red/25 text-accent-red">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+
+        </div>
 
         <p className="text-center text-xs md:text-sm text-black/50 mt-12 font-medium">
           Join thousands of clients who have transformed their image and their lives.
