@@ -22,14 +22,14 @@ export default function FeaturedVideo() {
             className="lg:col-span-5 flex flex-col justify-center"
           >
             <span className="text-accent-red text-xs font-bold tracking-[0.2em] uppercase mb-4">
-              {"See What You'll Learn"}
+              {"A Glimpse Of The Experience"}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-tight mb-6">
-              Watch a preview of our<br />
-              Live <span className="text-accent-red">₹199 Session</span>
+              See What Makes<br />
+              Thousands Choose <span className="text-accent-red">Live It Up</span>
             </h2>
             <p className="text-black/60 text-sm md:text-base font-light leading-relaxed mb-8 max-w-md">
-              See exactly what you will discover in our 90-minute live interactive masterclass. Watch a preview of how we analyze personal styles, upgrade wardrobes, and build unstoppable confidence.
+              {"This isn't another motivational webinar. It's a practical transformation session where you'll learn how to build confidence, elevate your style, and create a lasting first impression."}
             </p>
 
             {/* Icons indicators */}
