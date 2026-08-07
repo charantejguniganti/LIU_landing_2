@@ -139,7 +139,7 @@ export default function Hero() {
                 alt="Live It Up Premium Consulting"
                 fill
                 priority
-                className="object-contain object-bottom"
+                className="object-contain object-bottom scale-125 md:scale-145 origin-bottom"
               />
             </div>
           </motion.div>
